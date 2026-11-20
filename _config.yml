@@ -10,7 +10,7 @@
 # title appears in the header
 title: NSF Comp Math Meeting 2027
 # description and keywords for meta tags
-description: "Details about the 2027 NSH Comp Math workshop"
+description: "Details about the 2027 NSF Comp Math workshop"
 keywords: "workshops, comp math, computational, mathematics"
 
 # author settings for cc-by, appears in the footer
@@ -19,7 +19,7 @@ pub_year: 2027
 github_username: elizabethnewman
 
 # add the full url for the github repository
-repo: "https://github.com/elizabethnewman/compmath-pi-meeting-2027"
+repo: "https://github.com/nsf-compmath-2027/nsf-compmath-2027.github.io"
 
 # site urls
 # Optional if using GitHub Pages! If building manually, these must be set correctly.
