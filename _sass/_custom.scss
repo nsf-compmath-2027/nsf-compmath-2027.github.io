@@ -4,6 +4,26 @@
     border: solid 1px $grey-color-light;
     border-radius: 5px;
 }
+// Home page: meeting details beside the image
+.hero {
+    display: flex;
+    align-items: center;
+    gap: $spacing-unit;
+    margin-bottom: $spacing-unit;
+
+    .hero-text { flex: 1 1 auto; }
+    .hero-text h2:last-child { margin-bottom: 0; }
+    .hero-image { flex: 0 0 40%; }
+    figure { margin: 0; }
+    img { display: block; width: 100%; height: auto; border-radius: 6px; }
+
+    @include media-query($on-palm) {
+        flex-direction: column;
+        align-items: stretch;
+        .hero-image { flex-basis: auto; max-width: 320px; }
+    }
+}
+
 .site-nav .active, .site-footer .active {
     text-decoration: underline;
     color: $active-color;

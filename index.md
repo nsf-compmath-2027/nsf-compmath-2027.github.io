@@ -2,18 +2,24 @@
 title: Home
 ---
 
+<div class="hero">
+<div class="hero-text" markdown="1">
+
 ## University of Minnesota
 ## [Coffman Memorial Union](https://sua.umn.edu/coffman-memorial-union)
 ## May 21-22, 2027
 
-{% include figure.html img="umn_math.png" alt="UMN Department of Mathematics" width="50%" %}
+</div>
+<div class="hero-image">
+{% include figure.html img="umn_math.png" alt="UMN Department of Mathematics" %}
+</div>
+</div>
 
 
+*The National Science Foundation (NSF) Computational Mathematics (CompMath) Meeting brings together the broad community of researchers, program officers of the NSF DMS CompMath program, and early-career scholars advancing various fields of computational mathematics. Participants include those already funded by the CompMath program and those seeking funds from the NSF, such as junior faculty, postdoctoral fellows, and graduate students.*
 
-*The National Science Foundation (NSF) Computational Mathematics meeting brings together program officers of the NSF DMS Computational Mathematics program (CompMath) and researchers working in related fields. Participants include those already funded by the CompMath program, as well as participants seeking funds from NSF, such as junior faculty, postdoctoral fellows, and graduate students.*
 
-
-*The goals of the meeting are to provide a forum for CompMath-sponsored researchers to showcase their projects regarding intellectual merit and broader impacts, to raise awareness of the breadth of the program’s topics and their impacts, and to allow the computational mathematics community to assess the programs in their entirety.  In addition, the meeting is intended to facilitate the exchange of ideas and spur collaboration on the development of crucial insights into future directions of the Computational Mathematics group, to broaden the expertise of the community by introducing junior researchers to the NSF CompMath program, and to help communicate the scope of the impacts of Computational Mathematics field to the public.*
+*The goals of the meeting are to provide a forum for CompMath-sponsored researchers to showcase the intellectual merit and broader impacts of their projects, to raise awareness of the breadth of the program’s topics and their impacts, and to allow the exchange of ideas among the CompMath community at large.  The meeting will facilitate the development of new collaborations, provide crucial insights into future directions of the CompMath program, introduce junior researchers to the NSF CompMath program, and to help communicate the scope and impact of computational mathematics to the public.*
 
 ## Organizers
 
