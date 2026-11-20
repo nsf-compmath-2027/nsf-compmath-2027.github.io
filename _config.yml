@@ -8,18 +8,18 @@
 
 # Site settings
 # title appears in the header
-title: workshop-template
+title: NSF Comp Math Meeting 2027
 # description and keywords for meta tags
-description: "Create an OER workshop website quick and easy!"
-keywords: "workshops, OER, Open Education, websites, gh-pages, jekyll"
+description: "Details about the 2027 NSH Comp Math workshop"
+keywords: "workshops, comp math, computational, mathematics"
 
 # author settings for cc-by, appears in the footer
-author: evan will
-pub_year: 2018
-github_username: evanwill
+author: Elizabeth Newman
+pub_year: 2027
+github_username: elizabethnewman
 
 # add the full url for the github repository
-repo: "https://github.com/evanwill/workshop-template"
+repo: "https://github.com/elizabethnewman/compmath-pi-meeting-2027"
 
 # site urls
 # Optional if using GitHub Pages! If building manually, these must be set correctly.

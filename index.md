@@ -2,29 +2,20 @@
 title: Home
 ---
 
-# Workshop Template!
+# NSF Comp Math Meeting 2027
 
-{% include figure.html img="uidaho-workshop.jpg" alt="intro image here" caption="Library workshop" width="75%" %}
+{% include figure.html img="umn_math.png" alt="UMN Department of Mathematics" width="75%" %}
 
-A minimal Jekyll theme for creating workshop websites.
+## University of Minnesota
+## May 21-22, 2027
 
-*Add your workshop abstract here!*
 
-Learn how to create a super quick easy website for a workshop by writing a few markdown files! 
-Host it for free on GitHub with gh-pages, and share!
-Fun!
+*The National Science Foundation (NSF) Computational Mathematics meeting brings together program officers of the NSF DMS Computational Mathematics program (CompMath) and researchers working in related fields. Participants include those already funded by the CompMath program, as well as participants seeking funds from NSF, such as junior faculty, postdoctoral fellows, and graduate students.*
 
-*See also:* [workshop-template-b](https://evanwill.github.io/workshop-template-b/), Bootstrap version.
 
-<div class="toc" markdown="1">
-## Contents:
+*The goals of the meeting are to provide a forum for CompMath-sponsored researchers to showcase their projects regarding intellectual merit and broader impacts, to raise awareness of the breadth of the program’s topics and their impacts, and to allow the computational mathematics community to assess the programs in their entirety.  In addition, the meeting is intended to facilitate the exchange of ideas and spur collaboration on the development of crucial insights into future directions of the Computational Mathematics group, to broaden the expertise of the community by introducing junior researchers to the NSF CompMath program, and to help communicate the scope of the impacts of Computational Mathematics field to the public.*
 
-{% for lesson in site.pages %}
-{% if lesson.nav == true %}- [{{ lesson.title }}]({{ lesson.url | relative_url }}){% endif %}
-{% endfor %}
-</div>
 
-Hosted by [University of Idaho Library](http://www.lib.uidaho.edu/), {{ site.pub_year }}.
  
 > built using [Jekyll](https://jekyllrb.com/) and [GitHub Pages](https://pages.github.com/)
 >
