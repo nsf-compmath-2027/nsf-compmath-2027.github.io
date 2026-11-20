@@ -1,0 +1,110 @@
+# =====================================================================
+# Meeting schedule — edit this file to update the Schedule page.
+#
+# Slot types:
+#   break     – registration, coffee, lunch (shown as a thin shaded bar)
+#   plenary   – one event for everyone (opening, keynote, joint panel)
+#   parallel  – up to 4 simultaneous sessions, one per track
+#
+# Times are plain text, shown exactly as written.
+#
+# Each talk has: time, speaker, affiliation (optional), title.
+# =====================================================================
+
+# Tracks: each track always meets in the same room.
+tracks:
+  - id: A
+    room: "Room A (TBD)"
+  - id: B
+    room: "Room B (TBD)"
+  - id: C
+    room: "Room C (TBD)"
+  - id: D
+    room: "Room D (TBD)"
+
+# Session themes: `id` is used in the sessions below; `name` is shown on the page.
+# `color` sets the theme's accent color.
+themes:
+  - id: PDE
+    name: "Partial Differential Equations"
+    color: "#2563eb"
+  - id: NLA
+    name: "Numerical Linear Algebra"
+    color: "#16a34a"
+  - id: SI
+    name: "SI"
+    color: "#c2410c"
+
+days:
+  - date: 2027-05-21
+    label: "Friday, May 21"
+    slots:
+      - start: "7:00"
+        end: "8:00"
+        type: break
+        title: "Registration and Coffee"
+
+      - start: "8:00"
+        end: "8:50"
+        type: plenary
+        title: "Opening and Welcome"
+        room: "Main Hall (TBD)"
+
+      - start: "9:00"
+        end: "10:20"
+        type: parallel
+        sessions:
+          - id: 1A
+            track: A
+            theme: PDE
+            title: "Session 1A"
+            # Placeholder talks: all names, institutions, and titles are fictional.
+            talks:
+              - time: "9:00"
+                speaker: "Ada Gridsworth"
+                affiliation: "University of Nowhere, Dept. of Imaginary Analysis"
+                title: "Mesh Me Maybe"
+              - time: "9:20"
+                speaker: "Professor Lax N. Milgram"
+                affiliation: "Hilbert Space Institute, Infinite-Dimensional Campus"
+                title: "Existence, Uniqueness, and Mild Existential Dread: A-Posteriori Error Estimates for Elliptic Problems Posed on Domains Drawn on Napkins During Coffee Breaks"
+              - time: "9:40"
+                speaker: "Dr. Courant F. Lewy-Wright"
+                affiliation: "Institute for Stable Timesteps"
+                title: "How Small Is Small Enough? Adventures at the Edge of the CFL Condition"
+              - time: "10:00"
+                speaker: "Neu Mann"
+                affiliation: "Boundary Conditions College"
+                title: "Don't Cross the Boundary"
+          - id: 1B
+            track: B
+            theme: NLA
+            title: "Session 1B"
+            talks:
+              - { time: "9:00",  speaker: "Speaker 1", affiliation: "Institution", title: "Talk title" }
+              - { time: "9:20",  speaker: "Speaker 2", affiliation: "Institution", title: "Talk title" }
+              - { time: "9:40",  speaker: "Speaker 3", affiliation: "Institution", title: "Talk title" }
+              - { time: "10:00", speaker: "Speaker 4", affiliation: "Institution", title: "Talk title" }
+          - id: 1C
+            track: C
+            theme: SI
+            title: "Session 1C"
+            talks:
+              - { time: "9:00",  speaker: "Speaker 1", affiliation: "Institution", title: "Talk title" }
+              - { time: "9:20",  speaker: "Speaker 2", affiliation: "Institution", title: "Talk title" }
+              - { time: "9:40",  speaker: "Speaker 3", affiliation: "Institution", title: "Talk title" }
+              - { time: "10:00", speaker: "Speaker 4", affiliation: "Institution", title: "Talk title" }
+          - id: 1D
+            track: D
+            theme: PDE
+            title: "Session 1D"
+            talks:
+              - { time: "9:00",  speaker: "Speaker 1", affiliation: "Institution", title: "Talk title" }
+              - { time: "9:20",  speaker: "Speaker 2", affiliation: "Institution", title: "Talk title" }
+              - { time: "9:40",  speaker: "Speaker 3", affiliation: "Institution", title: "Talk title" }
+              - { time: "10:00", speaker: "Speaker 4", affiliation: "Institution", title: "Talk title" }
+
+      - start: "10:20"
+        end: "10:50"
+        type: break
+        title: "Coffee Break"

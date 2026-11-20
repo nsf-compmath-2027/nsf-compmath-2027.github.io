@@ -1,0 +1,261 @@
+// Schedule page (_includes/schedule.html)
+
+$sched-wide: 1160px;
+
+// Let the schedule use more width than the 800px text column, so four
+// parallel sessions fit side by side on a laptop screen.
+.schedule {
+  position: relative;
+  width: calc(100vw - 32px);
+  max-width: $sched-wide;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: $spacing-unit;
+}
+
+// ---- Controls ------------------------------------------------------------
+.sched-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin-bottom: $spacing-unit * 0.75;
+}
+
+.sched-search {
+  flex: 1 1 260px;
+  font: inherit;
+  padding: 8px 12px;
+  border: 1px solid $grey-color-light;
+  border-radius: 6px;
+  background: #fff;
+  &:focus { outline: 2px solid $link-color; outline-offset: 1px; border-color: transparent; }
+}
+
+.sched-themes { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.theme-btn {
+  font: inherit;
+  font-size: $small-font-size;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border: 1px solid $grey-color-light;
+  border-radius: 999px;
+  background: #fff;
+  color: $text-color;
+  cursor: pointer;
+  &:hover { border-color: $grey-color; }
+  &.is-active { background: $grey-color-dark; border-color: $grey-color-dark; color: #fff; }
+  &[data-theme]:not([data-theme="all"]).is-active { background: var(--theme); border-color: var(--theme); }
+  &.is-active .theme-dot { background: #fff; }
+}
+
+.theme-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--theme); }
+
+.sched-status { flex-basis: 100%; margin: 0; font-size: $small-font-size; color: $grey-color; min-height: 1em; }
+
+// ---- Day tabs ------------------------------------------------------------
+.sched-tabs { display: flex; gap: 4px; border-bottom: 1px solid $grey-color-light; margin-bottom: $spacing-unit * 0.75; }
+
+.sched-tab {
+  font: inherit;
+  padding: 8px 16px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: $grey-color-dark;
+  cursor: pointer;
+  &.is-active { border-bottom-color: $link-color; color: $text-color; font-weight: 600; }
+}
+
+.sched-day { display: none; &.is-active { display: block; } }
+.sched-day-title { font-size: 22px; margin-bottom: $spacing-unit / 2; }
+.sched-tabs ~ .sched-day .sched-day-title { display: none; }
+
+// ---- Time slots ----------------------------------------------------------
+.sched-slot {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 1px solid $grey-color-light;
+  &[hidden] { display: none; }
+}
+
+.sched-time {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  span { font-weight: 400; color: $grey-color; }
+}
+
+.sched-event { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.sched-event-title { font-weight: 600; }
+
+.sched-room { font-size: $small-font-size; color: $grey-color; margin: 0; }
+
+// Breaks: slim, shaded
+.sched-break {
+  background: #f3f4f6;
+  border-radius: 6px;
+  border-top-color: transparent;
+  padding: 8px 12px;
+  margin: 6px 0;
+  .sched-time, .sched-event-title { font-size: $small-font-size; color: $grey-color-dark; }
+  .sched-event-title { font-weight: 400; font-style: italic; }
+}
+
+// Plenary: emphasized full-width event
+.sched-plenary .sched-event {
+  border-left: 4px solid $grey-color-dark;
+  padding-left: 12px;
+}
+.sched-plenary .sched-event-title { font-size: 18px; }
+
+// While filtering, de-emphasize non-session rows so matches stand out.
+.is-filtering .sched-break,
+.is-filtering .sched-plenary { opacity: 0.45; }
+
+// ---- Parallel sessions ---------------------------------------------------
+.sched-sessions {
+  display: grid;
+  grid-template-columns: 1fr;   // one session per row
+  gap: 10px;
+}
+
+.sched-session {
+  border: 1px solid $grey-color-light;
+  border-top: 4px solid var(--theme);
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: #fff;
+  scroll-margin-top: 16px;
+  &[hidden] { display: none; }
+  &:target { box-shadow: 0 0 0 3px var(--theme); }
+
+  // Header on one line: [theme] Session title · room
+  header {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
+    margin-bottom: 8px;
+    padding-right: 32px;
+  }
+  h3 {
+    font-size: 16px;
+    margin: 0;
+    a { color: inherit; }
+  }
+}
+
+.theme-pill {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 1px 8px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--theme);
+}
+
+.sched-talks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: $small-font-size;
+  line-height: 1.35;
+
+  li {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 10px;
+    padding: 7px 6px;
+    border-top: 1px dashed $grey-color-light;
+    border-radius: 4px;
+  }
+  li.is-match { background: #fef3c7; }
+}
+
+.talk-time { color: $grey-color; font-variant-numeric: tabular-nums; }
+
+// Speaker and title side by side in columns on wider screens.
+.talk-body {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 4px 20px;
+}
+.talk-speaker { display: block; font-weight: 600; }
+.talk-affil { display: block; font-size: 13px; color: $grey-color; }
+.talk-title { color: $grey-color-dark; }
+
+// ---- Collapsing ----------------------------------------------------------
+.collapse-all-btn {
+  font: inherit;
+  font-size: $small-font-size;
+  padding: 5px 12px;
+  border: 1px solid $grey-color-light;
+  border-radius: 6px;
+  background: #fff;
+  color: $text-color;
+  cursor: pointer;
+  &:hover { border-color: $grey-color; }
+}
+
+.session-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+  &:hover { border-color: $grey-color-light; background: #f3f4f6; }
+  // chevron: points up when open (click to hide), down when collapsed
+  &::before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 10px;
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid $grey-color-dark;
+    border-bottom: 2px solid $grey-color-dark;
+    transform: rotate(-135deg);
+  }
+}
+
+.talk-count { display: none; }
+
+.sched-session.is-collapsed {
+  header { margin-bottom: 0; }
+  .sched-talks { display: none; }
+  .talk-count { display: inline; }
+  .session-toggle::before { transform: rotate(45deg); top: 6px; }
+}
+
+// While searching, open collapsed sessions so matching talks are visible.
+.is-searching .sched-session.is-collapsed {
+  header { margin-bottom: 8px; }
+  .sched-talks { display: block; }
+}
+
+.sched-empty { color: $grey-color; font-style: italic; padding: $spacing-unit 0; text-align: center; }
+
+// ---- Smaller screens -----------------------------------------------------
+// Below laptop width, put the title under the speaker instead of beside it.
+@include media-query($on-laptop) {
+  .talk-body { grid-template-columns: 1fr; gap: 2px; }
+}
+
+@include media-query($on-palm) {
+  .sched-slot { grid-template-columns: 1fr; gap: 6px; }
+  .sched-time span { display: inline; }
+  .sched-talks li { grid-template-columns: 40px 1fr; gap: 6px; }
+}

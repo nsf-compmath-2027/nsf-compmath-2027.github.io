@@ -1,0 +1,88 @@
+{%- comment -%}
+  Renders _data/schedule.yml. Content lives in the data file; edit that, not this.
+{%- endcomment -%}
+{%- assign sched = site.data.schedule -%}
+
+<div class="schedule" id="sched-root">
+
+  <div class="sched-controls">
+    <input type="search" id="sched-search" class="sched-search"
+           placeholder="Search speakers, talks, sessions…" aria-label="Search the schedule">
+    <div class="sched-themes" role="group" aria-label="Filter by theme">
+      <button type="button" class="theme-btn is-active" data-theme="all" aria-pressed="true">All themes</button>
+      {%- for th in sched.themes %}
+      <button type="button" class="theme-btn" data-theme="{{ th.id }}" aria-pressed="false"
+              style="--theme: {{ th.color }}" title="{{ th.name | escape }}">
+        <span class="theme-dot"></span>{{ th.id }}
+      </button>
+      {%- endfor %}
+    </div>
+    <button type="button" class="collapse-all-btn" id="sched-collapse-all" aria-pressed="false">Collapse all</button>
+    <p class="sched-status" id="sched-status" aria-live="polite"></p>
+  </div>
+
+  {%- if sched.days.size > 1 %}
+  <div class="sched-tabs" role="tablist">
+    {%- for day in sched.days %}
+    <button type="button" class="sched-tab{% if forloop.first %} is-active{% endif %}" role="tab"
+            data-day="day-{{ forloop.index }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">{{ day.label }}</button>
+    {%- endfor %}
+  </div>
+  {%- endif %}
+
+  {%- for day in sched.days %}
+  <section class="sched-day{% if forloop.first %} is-active{% endif %}" id="day-{{ forloop.index }}" aria-label="{{ day.label | escape }}">
+    <h2 class="sched-day-title">{{ day.label }}</h2>
+
+    {%- for slot in day.slots %}
+    <div class="sched-slot sched-{{ slot.type }}">
+      <div class="sched-time">{{ slot.start }}<span>–{{ slot.end }}</span></div>
+
+      {%- if slot.type == "parallel" %}
+      <div class="sched-sessions">
+        {%- for s in slot.sessions %}
+          {%- assign track = sched.tracks | where: "id", s.track | first -%}
+          {%- assign theme = sched.themes | where: "id", s.theme | first -%}
+          {%- capture search_text -%}
+            {{ s.title }} {{ s.theme }} {{ theme.name }} {{ track.room }} {% for t in s.talks %}{{ t.speaker }} {{ t.affiliation }} {{ t.title }} {% endfor %}
+          {%- endcapture %}
+        <article class="sched-session" id="session-{{ s.id | slugify }}"
+                 data-theme="{{ s.theme }}" data-search="{{ search_text | downcase | strip_newlines | escape }}"
+                 style="--theme: {{ theme.color | default: '#828282' }}">
+          <header>
+            <span class="theme-pill" title="{{ theme.name | escape }}">{{ s.theme }}</span>
+            <h3><a href="#session-{{ s.id | slugify }}">{{ s.title }}</a></h3>
+            <p class="sched-room">{{ track.room }}<span class="talk-count"> · {{ s.talks.size }} talk{% if s.talks.size != 1 %}s{% endif %}</span></p>
+            <button type="button" class="session-toggle" aria-expanded="true"
+                    aria-controls="talks-{{ s.id | slugify }}" aria-label="Hide talks in {{ s.title | escape }}"></button>
+          </header>
+          <ol class="sched-talks" id="talks-{{ s.id | slugify }}">
+            {%- for t in s.talks %}
+            <li data-search="{{ t.speaker | append: ' ' | append: t.affiliation | append: ' ' | append: t.title | downcase | escape }}">
+              <span class="talk-time">{{ t.time }}</span>
+              <span class="talk-body">
+                <span class="talk-who"><span class="talk-speaker">{{ t.speaker }}</span>
+                {%- if t.affiliation %}<span class="talk-affil">{{ t.affiliation }}</span>{% endif %}</span>
+                <span class="talk-title">{{ t.title }}</span>
+              </span>
+            </li>
+            {%- endfor %}
+          </ol>
+        </article>
+        {%- endfor %}
+      </div>
+      {%- else %}
+      <div class="sched-event">
+        <span class="sched-event-title">{{ slot.title }}</span>
+        {%- if slot.room %}<span class="sched-room">{{ slot.room }}</span>{% endif %}
+      </div>
+      {%- endif %}
+    </div>
+    {%- endfor %}
+  </section>
+  {%- endfor %}
+
+  <p class="sched-empty" id="sched-empty" hidden>No sessions match your search.</p>
+</div>
+
+<script src="{{ '/js/schedule.js' | relative_url }}" defer></script>
