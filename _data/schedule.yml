@@ -22,17 +22,18 @@ tracks:
   - id: D
     room: "Room D (TBD)"
 
-# Session themes: `id` is used in the sessions below; `name` is shown on the page.
+# Session themes: `id` is used in the sessions below and shown on the filter
+# buttons and session labels; `name` appears when hovering over them and is searchable.
 # `color` sets the theme's accent color.
 themes:
-  - id: PDE
-    name: "Partial Differential Equations"
+  - id: T1
+    name: "Theme 1"
     color: "#2563eb"
-  - id: NLA
-    name: "Numerical Linear Algebra"
+  - id: T2
+    name: "Theme 2"
     color: "#16a34a"
-  - id: SI
-    name: "SI"
+  - id: T3
+    name: "Theme 3"
     color: "#c2410c"
 
 days:
@@ -56,7 +57,7 @@ days:
         sessions:
           - id: 1A
             track: A
-            theme: PDE
+            theme: T1
             title: "Session 1A"
             # Placeholder talks: all names, institutions, and titles are fictional.
             talks:
@@ -78,7 +79,7 @@ days:
                 title: "Don't Cross the Boundary"
           - id: 1B
             track: B
-            theme: NLA
+            theme: T2
             title: "Session 1B"
             talks:
               - { time: "9:00",  speaker: "Speaker 1", affiliation: "Institution", title: "Talk title" }
@@ -87,7 +88,7 @@ days:
               - { time: "10:00", speaker: "Speaker 4", affiliation: "Institution", title: "Talk title" }
           - id: 1C
             track: C
-            theme: SI
+            theme: T3
             title: "Session 1C"
             talks:
               - { time: "9:00",  speaker: "Speaker 1", affiliation: "Institution", title: "Talk title" }
@@ -96,7 +97,7 @@ days:
               - { time: "10:00", speaker: "Speaker 4", affiliation: "Institution", title: "Talk title" }
           - id: 1D
             track: D
-            theme: PDE
+            theme: T1
             title: "Session 1D"
             talks:
               - { time: "9:00",  speaker: "Speaker 1", affiliation: "Institution", title: "Talk title" }

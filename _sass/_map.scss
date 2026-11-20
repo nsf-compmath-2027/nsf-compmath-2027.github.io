@@ -1,0 +1,35 @@
+// Embedded Google My Maps map (_includes/map.html)
+
+.site-map-wrap { margin: $spacing-unit / 2 0 $spacing-unit; }
+
+.site-map {
+  position: relative;
+  height: 480px;
+  border: 1px solid $grey-color-light;
+  border-radius: 6px;
+  overflow: hidden;
+
+  iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  @include media-query($on-palm) { height: 360px; }
+}
+
+.site-map-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  color: $grey-color;
+  font-style: italic;
+}
+
+.map-link {
+  margin: 6px 0 0;
+  font-size: $small-font-size;
+}

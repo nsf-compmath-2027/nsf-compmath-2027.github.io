@@ -1,0 +1,26 @@
+{%- comment -%}
+  Embedded Google My Maps map.
+
+  Usage in a page:
+    {% include map.html src="https://www.google.com/maps/d/embed?mid=XXXXXXXX" %}
+
+  Optional:  title="..."  (describes the map for screen readers)
+             link="..."   (full-screen link; defaults to the viewer version of the map)
+
+  Get `src` from My Maps: ⋮ menu → "Embed on my site" → copy the URL inside src="...".
+  The map must be shared as "Anyone with the link can view".
+{%- endcomment -%}
+{%- assign view_link = include.link | default: include.src | replace: "/maps/d/embed", "/maps/d/viewer" -%}
+
+<div class="site-map-wrap">
+  {%- if include.src %}
+  <div class="site-map">
+    <iframe src="{{ include.src }}"
+            title="{{ include.title | default: 'Map of meeting locations' | escape }}"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+  </div>
+  <p class="map-link"><a href="{{ view_link }}" target="_blank" rel="noopener">Open the map in Google Maps ↗</a></p>
+  {%- else %}
+  <div class="site-map site-map-placeholder">Map coming soon.</div>
+  {%- endif %}
+</div>
