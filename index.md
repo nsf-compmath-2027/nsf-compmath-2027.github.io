@@ -29,7 +29,12 @@ title: Home
 * [Li Wang](https://cse.umn.edu/math/li-wang), University of Minnesota
 
 
- 
+## AI Disclosure and Site Credits
+
+This website was developed with the assistance of [Claude Code](https://www.anthropic.com/claude-code) Opus 5.5, an AI coding tool by Anthropic, which helped build the site's layout, interactive schedule, and setup. All meeting information, including descriptions, dates, and organizer details, was written and reviewed by the organizers.
+
+This site is built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/). It is adapted from [workshop-template](https://github.com/evanwill/workshop-template) by Evan Will, which is based on the [Minima](https://github.com/jekyll/minima) theme.
+
 <!-- > built using [Jekyll](https://jekyllrb.com/) and [GitHub Pages](https://pages.github.com/)
 >
 > images and content: cc-by-sa <a href="https://github.com/{{ site.github_username }}">{{ site.author }}</a> {{ site.pub_year}} (get [source code]({{ site.repo }})).
