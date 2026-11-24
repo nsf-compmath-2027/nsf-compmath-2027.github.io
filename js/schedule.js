@@ -24,6 +24,15 @@
     t.addEventListener('click', function () { showDay(t.dataset.day); });
   });
 
+  // "Next day" buttons at the bottom of each day: switch, then scroll to the tabs.
+  root.querySelectorAll('.sched-next-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      showDay(b.dataset.day);
+      var tabBar = root.querySelector('.sched-tabs');
+      if (tabBar) tabBar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
   themeBtns.forEach(function (b) {
     b.addEventListener('click', function () {
       activeTheme = b.dataset.theme;

@@ -79,6 +79,13 @@
       {%- endif %}
     </div>
     {%- endfor %}
+
+    {%- unless forloop.last %}
+    {%- assign next_day = sched.days[forloop.index] %}
+    <div class="sched-next">
+      <button type="button" class="sched-next-btn" data-day="day-{{ forloop.index | plus: 1 }}">{{ next_day.label }} &rarr;</button>
+    </div>
+    {%- endunless %}
   </section>
   {%- endfor %}
 

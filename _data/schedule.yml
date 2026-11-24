@@ -109,3 +109,63 @@ days:
         end: "10:50"
         type: break
         title: "Coffee Break"
+
+  - date: 2027-05-22
+    label: "Saturday, May 22"
+    slots:
+      - start: "7:00"
+        end: "8:00"
+        type: break
+        title: "Coffee"
+
+      - start: "8:00"
+        end: "8:50"
+        type: plenary
+        title: "Plenary Session (TBD)"
+        room: "Main Hall (TBD)"
+
+      - start: "9:00"
+        end: "10:20"
+        type: parallel
+        sessions:
+          - id: 2A
+            track: A
+            theme: T1
+            title: "Session 2A"
+            talks:
+              - { time: "9:00",  speaker: "Speaker 1", affiliation: "Institution", title: "Talk title" }
+              - { time: "9:20",  speaker: "Speaker 2", affiliation: "Institution", title: "Talk title" }
+              - { time: "9:40",  speaker: "Speaker 3", affiliation: "Institution", title: "Talk title" }
+              - { time: "10:00", speaker: "Speaker 4", affiliation: "Institution", title: "Talk title" }
+          - id: 2B
+            track: B
+            theme: T2
+            title: "Session 2B"
+            talks:
+              - { time: "9:00",  speaker: "Speaker 1", affiliation: "Institution", title: "Talk title" }
+              - { time: "9:20",  speaker: "Speaker 2", affiliation: "Institution", title: "Talk title" }
+              - { time: "9:40",  speaker: "Speaker 3", affiliation: "Institution", title: "Talk title" }
+              - { time: "10:00", speaker: "Speaker 4", affiliation: "Institution", title: "Talk title" }
+          - id: 2C
+            track: C
+            theme: T3
+            title: "Session 2C"
+            talks:
+              - { time: "9:00",  speaker: "Speaker 1", affiliation: "Institution", title: "Talk title" }
+              - { time: "9:20",  speaker: "Speaker 2", affiliation: "Institution", title: "Talk title" }
+              - { time: "9:40",  speaker: "Speaker 3", affiliation: "Institution", title: "Talk title" }
+              - { time: "10:00", speaker: "Speaker 4", affiliation: "Institution", title: "Talk title" }
+          - id: 2D
+            track: D
+            theme: T1
+            title: "Session 2D"
+            talks:
+              - { time: "9:00",  speaker: "Speaker 1", affiliation: "Institution", title: "Talk title" }
+              - { time: "9:20",  speaker: "Speaker 2", affiliation: "Institution", title: "Talk title" }
+              - { time: "9:40",  speaker: "Speaker 3", affiliation: "Institution", title: "Talk title" }
+              - { time: "10:00", speaker: "Speaker 4", affiliation: "Institution", title: "Talk title" }
+
+      - start: "10:20"
+        end: "10:50"
+        type: break
+        title: "Coffee Break"

@@ -71,6 +71,19 @@ $sched-wide: 1160px;
 }
 
 .sched-day { display: none; &.is-active { display: block; } }
+
+.sched-next { display: flex; justify-content: flex-end; padding-top: 12px; border-top: 1px solid $grey-color-light; }
+.sched-next-btn {
+  font: inherit;
+  padding: 8px 16px;
+  border: 1px solid $grey-color-light;
+  border-radius: 6px;
+  background: #fff;
+  color: $link-color;
+  cursor: pointer;
+  &:hover { border-color: $link-color; }
+}
+.is-filtering .sched-next { display: none; }
 .sched-day-title { font-size: 22px; margin-bottom: $spacing-unit / 2; }
 .sched-tabs ~ .sched-day .sched-day-title { display: none; }
 
