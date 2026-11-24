@@ -23,7 +23,7 @@ title: Home
 
 ## Organizers
 
-* [Alen Alexandrian](https://math.sciences.ncsu.edu/people/aalexan3/), North Carolina State University
+* [Alen Alexanderian](https://math.sciences.ncsu.edu/people/aalexan3/), North Carolina State University
 * [Elizabeth Newman](https://elizabethnewman.owlstown.net/), Tufts University
 * [Molei Tao](https://mtao8.math.gatech.edu/), Georgia Institute of Technology
 * [Li Wang](https://cse.umn.edu/math/li-wang), University of Minnesota
