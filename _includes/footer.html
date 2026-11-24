@@ -2,6 +2,7 @@
   <div class="wrapper">
     <div class="footer-col-wrapper" >
     <div class="footer-nav">
+        <a class="page-link{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
         {% for lesson in site.pages %}
           {% if lesson.nav == true %}
           <a class="page-link{% if page.url == lesson.url %} active{% endif %}" href="{{ lesson.url | relative_url }}">{{ lesson.title | escape }}</a>

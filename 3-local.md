@@ -12,3 +12,4 @@ nav: true
 # Attractions
 
 * [Minneapolis Sculpture Garden](https://www.walkerart.org/minneapolis-sculpture-garden/)
+* [Mineehaha Falls](https://www.exploreminnesota.com/profile/minnehaha-falls-minnehaha-park/1839)

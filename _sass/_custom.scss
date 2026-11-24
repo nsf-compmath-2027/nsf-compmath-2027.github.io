@@ -24,6 +24,20 @@
     }
 }
 
+// Home page: AI disclosure and site credits, de-emphasized
+.site-credits {
+    margin-top: $spacing-unit * 1.5;
+    padding-top: $spacing-unit / 2;
+    border-top: 1px solid $grey-color-light;
+    font-size: 13px;
+    color: #767676; // light grey that still meets WCAG contrast for small text
+
+    h2 { font-size: 15px; font-weight: 600; color: inherit; margin-bottom: 6px; }
+    p { margin-bottom: 8px; }
+    a { color: inherit; text-decoration: underline; }
+    a:hover { color: $grey-color-dark; }
+}
+
 .site-nav .active, .site-footer .active {
     text-decoration: underline;
     color: $active-color;
